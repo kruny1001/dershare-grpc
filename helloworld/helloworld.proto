@@ -13,6 +13,10 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
   // Sends another greeting
   // rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+
+
+  rpc ListContainers(ListContainer) returns (stream ContainerList) {}
+
 }
 
 // The request message containing the user's name.
@@ -23,4 +27,13 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
   string message = 1;
+}
+
+message ListContainer {
+  // The name of the feature.
+  string name = 1;
+}
+
+message ContainerList{
+  string result = 1;
 }

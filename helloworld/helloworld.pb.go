@@ -102,26 +102,111 @@ func (m *HelloReply) GetMessage() string {
 	return ""
 }
 
+type ListContainer struct {
+	// The name of the feature.
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ListContainer) Reset()         { *m = ListContainer{} }
+func (m *ListContainer) String() string { return proto.CompactTextString(m) }
+func (*ListContainer) ProtoMessage()    {}
+func (*ListContainer) Descriptor() ([]byte, []int) {
+	return fileDescriptor_17b8c58d586b62f2, []int{2}
+}
+
+func (m *ListContainer) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListContainer.Unmarshal(m, b)
+}
+func (m *ListContainer) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListContainer.Marshal(b, m, deterministic)
+}
+func (m *ListContainer) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListContainer.Merge(m, src)
+}
+func (m *ListContainer) XXX_Size() int {
+	return xxx_messageInfo_ListContainer.Size(m)
+}
+func (m *ListContainer) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListContainer.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListContainer proto.InternalMessageInfo
+
+func (m *ListContainer) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type ContainerList struct {
+	Result               string   `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ContainerList) Reset()         { *m = ContainerList{} }
+func (m *ContainerList) String() string { return proto.CompactTextString(m) }
+func (*ContainerList) ProtoMessage()    {}
+func (*ContainerList) Descriptor() ([]byte, []int) {
+	return fileDescriptor_17b8c58d586b62f2, []int{3}
+}
+
+func (m *ContainerList) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ContainerList.Unmarshal(m, b)
+}
+func (m *ContainerList) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ContainerList.Marshal(b, m, deterministic)
+}
+func (m *ContainerList) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ContainerList.Merge(m, src)
+}
+func (m *ContainerList) XXX_Size() int {
+	return xxx_messageInfo_ContainerList.Size(m)
+}
+func (m *ContainerList) XXX_DiscardUnknown() {
+	xxx_messageInfo_ContainerList.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ContainerList proto.InternalMessageInfo
+
+func (m *ContainerList) GetResult() string {
+	if m != nil {
+		return m.Result
+	}
+	return ""
+}
+
 func init() {
 	proto.RegisterType((*HelloRequest)(nil), "helloworld.HelloRequest")
 	proto.RegisterType((*HelloReply)(nil), "helloworld.HelloReply")
+	proto.RegisterType((*ListContainer)(nil), "helloworld.ListContainer")
+	proto.RegisterType((*ContainerList)(nil), "helloworld.ContainerList")
 }
 
 func init() { proto.RegisterFile("helloworld.proto", fileDescriptor_17b8c58d586b62f2) }
 
 var fileDescriptor_17b8c58d586b62f2 = []byte{
-	// 175 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0xc8, 0x48, 0xcd, 0xc9,
-	0xc9, 0x2f, 0xcf, 0x2f, 0xca, 0x49, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x42, 0x88,
-	0x28, 0x29, 0x71, 0xf1, 0x78, 0x80, 0x78, 0x41, 0xa9, 0x85, 0xa5, 0xa9, 0xc5, 0x25, 0x42, 0x42,
-	0x5c, 0x2c, 0x79, 0x89, 0xb9, 0xa9, 0x12, 0x8c, 0x0a, 0x8c, 0x1a, 0x9c, 0x41, 0x60, 0xb6, 0x92,
-	0x1a, 0x17, 0x17, 0x54, 0x4d, 0x41, 0x4e, 0xa5, 0x90, 0x04, 0x17, 0x7b, 0x6e, 0x6a, 0x71, 0x71,
-	0x62, 0x3a, 0x4c, 0x11, 0x8c, 0x6b, 0xe4, 0xc9, 0xc5, 0xee, 0x5e, 0x94, 0x9a, 0x5a, 0x92, 0x5a,
-	0x24, 0x64, 0xc7, 0xc5, 0x11, 0x9c, 0x58, 0x09, 0xd6, 0x25, 0x24, 0xa1, 0x87, 0xe4, 0x02, 0x64,
-	0xcb, 0xa4, 0xc4, 0xb0, 0xc8, 0x14, 0xe4, 0x54, 0x2a, 0x31, 0x38, 0x19, 0x70, 0x49, 0x67, 0xe6,
-	0xeb, 0xa5, 0x17, 0x15, 0x24, 0xeb, 0xa5, 0x56, 0x24, 0xe6, 0x16, 0xe4, 0xa4, 0x16, 0x23, 0xa9,
-	0x75, 0xe2, 0x07, 0x2b, 0x0e, 0x07, 0xb1, 0x03, 0x40, 0x5e, 0x0a, 0x60, 0x4c, 0x62, 0x03, 0xfb,
-	0xcd, 0x18, 0x10, 0x00, 0x00, 0xff, 0xff, 0x0f, 0xb7, 0xcd, 0xf2, 0xef, 0x00, 0x00, 0x00,
+	// 239 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x6c, 0x90, 0x41, 0x4b, 0x03, 0x31,
+	0x10, 0x85, 0x1b, 0x90, 0x56, 0x07, 0xab, 0x32, 0x87, 0xb2, 0xd6, 0x8b, 0x44, 0x50, 0x4f, 0xa1,
+	0xe8, 0xdd, 0x43, 0x3d, 0x28, 0xe2, 0xa1, 0xd4, 0x83, 0xe7, 0xa8, 0xc3, 0xba, 0x90, 0xdd, 0xc4,
+	0x24, 0x8b, 0xee, 0x0f, 0xf1, 0xff, 0x4a, 0xc2, 0xae, 0x4d, 0x60, 0x6f, 0xf3, 0xf2, 0xbe, 0x24,
+	0x6f, 0x1e, 0x9c, 0x7c, 0x92, 0x52, 0xfa, 0x5b, 0x5b, 0xf5, 0x21, 0x8c, 0xd5, 0x5e, 0x23, 0xec,
+	0x4e, 0x38, 0x87, 0xc3, 0xc7, 0xa0, 0xb6, 0xf4, 0xd5, 0x92, 0xf3, 0x88, 0xb0, 0xd7, 0xc8, 0x9a,
+	0x0a, 0x76, 0xce, 0xae, 0x0f, 0xb6, 0x71, 0xe6, 0x97, 0x00, 0x3d, 0x63, 0x54, 0x87, 0x05, 0xcc,
+	0x6a, 0x72, 0x4e, 0x96, 0x03, 0x34, 0x48, 0x7e, 0x01, 0xf3, 0xe7, 0xca, 0xf9, 0x7b, 0xdd, 0x78,
+	0x59, 0x35, 0x64, 0x47, 0x1f, 0xbb, 0x82, 0xf9, 0x3f, 0x10, 0x68, 0x5c, 0xc0, 0xd4, 0x92, 0x6b,
+	0x95, 0xef, 0xb1, 0x5e, 0xdd, 0xfc, 0x32, 0x98, 0x3d, 0x58, 0x22, 0x4f, 0x16, 0xef, 0x60, 0xff,
+	0x45, 0x76, 0x31, 0x04, 0x16, 0x22, 0x59, 0x28, 0xcd, 0xbe, 0x5c, 0x8c, 0x38, 0x46, 0x75, 0x7c,
+	0x82, 0x4f, 0x70, 0x94, 0x25, 0x73, 0x78, 0x9a, 0xb2, 0x99, 0xb7, 0xcc, 0xac, 0x2c, 0x2b, 0x9f,
+	0xac, 0xd8, 0x7a, 0x05, 0x67, 0x95, 0x16, 0xa5, 0x35, 0xef, 0x82, 0x7e, 0x64, 0x6d, 0x14, 0xb9,
+	0xe4, 0xc2, 0xfa, 0x38, 0x7e, 0xfc, 0x1a, 0xe6, 0x4d, 0x68, 0x7b, 0xc3, 0xde, 0xa6, 0xb1, 0xf6,
+	0xdb, 0xbf, 0x00, 0x00, 0x00, 0xff, 0xff, 0x88, 0xc4, 0xa7, 0xe6, 0x8a, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -138,6 +223,7 @@ const _ = grpc.SupportPackageIsVersion4
 type GreeterClient interface {
 	// Sends a greeting
 	SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error)
+	ListContainers(ctx context.Context, in *ListContainer, opts ...grpc.CallOption) (Greeter_ListContainersClient, error)
 }
 
 type greeterClient struct {
@@ -157,10 +243,43 @@ func (c *greeterClient) SayHello(ctx context.Context, in *HelloRequest, opts ...
 	return out, nil
 }
 
+func (c *greeterClient) ListContainers(ctx context.Context, in *ListContainer, opts ...grpc.CallOption) (Greeter_ListContainersClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Greeter_serviceDesc.Streams[0], "/helloworld.Greeter/ListContainers", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &greeterListContainersClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Greeter_ListContainersClient interface {
+	Recv() (*ContainerList, error)
+	grpc.ClientStream
+}
+
+type greeterListContainersClient struct {
+	grpc.ClientStream
+}
+
+func (x *greeterListContainersClient) Recv() (*ContainerList, error) {
+	m := new(ContainerList)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // GreeterServer is the server API for Greeter service.
 type GreeterServer interface {
 	// Sends a greeting
 	SayHello(context.Context, *HelloRequest) (*HelloReply, error)
+	ListContainers(*ListContainer, Greeter_ListContainersServer) error
 }
 
 func RegisterGreeterServer(s *grpc.Server, srv GreeterServer) {
@@ -185,6 +304,27 @@ func _Greeter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Greeter_ListContainers_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(ListContainer)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(GreeterServer).ListContainers(m, &greeterListContainersServer{stream})
+}
+
+type Greeter_ListContainersServer interface {
+	Send(*ContainerList) error
+	grpc.ServerStream
+}
+
+type greeterListContainersServer struct {
+	grpc.ServerStream
+}
+
+func (x *greeterListContainersServer) Send(m *ContainerList) error {
+	return x.ServerStream.SendMsg(m)
+}
+
 var _Greeter_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "helloworld.Greeter",
 	HandlerType: (*GreeterServer)(nil),
@@ -194,6 +334,12 @@ var _Greeter_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Greeter_SayHello_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "ListContainers",
+			Handler:       _Greeter_ListContainers_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "helloworld.proto",
 }
